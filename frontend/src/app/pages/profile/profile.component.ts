@@ -17,7 +17,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   userId: number;
 
   userProfile: UserProfile;
-  achievements = [];
+  achievements = [{
+    image: 'http://wow.zamimg.com/images/wow/icons/large/achievement_arena_2v2_7.jpg',
+    userName: 'Vasya Pupkin',
+    comment: 'Just a great guy!'
+  }];
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
 
