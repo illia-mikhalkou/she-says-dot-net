@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using backend.ViewModels;
 
 namespace Signature.Domain.Entities.SignIn
 {
@@ -142,5 +144,11 @@ namespace Signature.Domain.Entities.SignIn
         /// The skype.
         /// </value>
         public string Skype { get; set; }
+
+
+
+
+
+        public List<Achievement> Achievements { get; set; }
     }
 }
