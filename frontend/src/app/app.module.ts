@@ -16,13 +16,14 @@ import {
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { UserListComponent } from './pages/user-list/user-list.component';
+import { ProfilesListComponent } from './pages/profiles-list/profiles-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    UserListComponent
+    ProfilesListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +36,9 @@ import { UserListComponent } from './pages/user-list/user-list.component';
     MatSidenavModule,
     MatSortModule,
     MatTableModule,
-    MatToolbarModule
-    //RouterModule.forRoot()
+    MatToolbarModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
