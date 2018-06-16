@@ -1,24 +1,47 @@
-<mat-card>
-  <mat-card-content>
-    <mat-grid-list cols="4" rows="2">
-      <mat-grid-tile>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-        <div class="profile-card-content">
-        <mat-list>
-            <mat-list-item>
-              NAME
-            </mat-list-item>
-            <mat-list-item>
-                POSITION
-            </mat-list-item>
-            <mat-list-item>
-                ROOM
-            </mat-list-item>
-          </mat-list>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-card-content>
-</mat-card>
+<div *ngIf="userProfile">
+  <mat-card>
+    <mat-card-content>
+      <mat-grid-list cols="4" rows="2">
+        <mat-grid-tile>
+            <img mat-card-image [src]="userProfile.image" alt="Photo of a Shiba Inu">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+          <div class="profile-card-content">
+            <mat-list>
+              <mat-list-item>
+                {{userProfile.firstNameEng}}&nbsp;{{userProfile.lastNameEng}}
+              </mat-list-item>
+              <mat-list-item>
+                {{userProfile.rank}} in D{{userProfile.deptId}}{{userProfile.group}} since {{userProfile.employmentDate | date:'shortDate'}}
+              </mat-list-item>
+              <mat-list-item>
+                  Room: {{userProfile.room}}
+              </mat-list-item>
+              <mat-list-item>
+                  Phone: {{userProfile.phone}}
+              </mat-list-item>
+              <mat-list-item>
+                  Email: &nbsp;<a class="email-link" [href]="'mailto:' + userProfile.email">{{userProfile.email}}</a>
+              </mat-list-item>
+              <mat-list-item>
+                  Skype: {{userProfile.skype}}
+              </mat-list-item>
+            </mat-list>
+
+            <div class="balance-block">
+              Balance <br/>
+              Points: 1293 <br/>
+              Coins: 21
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-list>
+    <mat-list-item *ngFor="let achieve of achievements">
+
+    </mat-list-item>
+  </mat-list>
+</div>
