@@ -72,7 +72,8 @@ namespace backend.Controllers
                 {
                     Comment = item.Comment,
                     Id = item.Id,
-                    FromUser = (await _smg.GetEmployeeDetailsById(session, item.FromUserId)).Profile
+                    FromUser = (await _smg.GetEmployeeDetailsById(session, item.FromUserId)).Profile,
+                    Icon = item.Achievement.Url
                 });
             }
 
