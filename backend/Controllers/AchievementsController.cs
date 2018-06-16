@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,7 @@ namespace backend.Controllers
             _db = db;
         }
 
+        [ProducesResponseType(200, Type = typeof(List<Achievement>))]
         [HttpGet("all")]
         public async Task<IActionResult> Get()
         {

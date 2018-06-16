@@ -149,6 +149,6 @@ namespace Signature.Domain.Entities.SignIn
 
 
 
-        public List<Achievement> Achievements { get; set; }
+        public List<AchievementInfo> Achievements { get; set; }
     }
 }

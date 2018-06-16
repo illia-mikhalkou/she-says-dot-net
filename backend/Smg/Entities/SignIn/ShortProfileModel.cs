@@ -16,6 +16,6 @@ namespace Signature.Domain.Entities.SignIn
         public string Position { get; set; }
         public int ProfileId { get; set; }
         public string Room { get; set; }
-        public List<Achievement> Achievements { get; set; }
+        public List<AchievementInfo> Achievements { get; set; }
     }
 }
