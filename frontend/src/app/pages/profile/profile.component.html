@@ -39,9 +39,17 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-list>
-    <mat-list-item *ngFor="let achieve of achievements">
-
-    </mat-list-item>
-  </mat-list>
+    <div class="achievements-block">
+      <mat-card *ngFor="let achievement of achievements">
+        <mat-card-header>
+          <img mat-card-avatar [src]="achievement.image"/>
+          <mat-card-title>
+            {{achievement.userName}} badged you with a comment:
+          </mat-card-title>
+          <mat-card-subtitle>
+            <span class="italic">{{achievement.comment}}</span>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
 </div>
