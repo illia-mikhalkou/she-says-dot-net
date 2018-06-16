@@ -1,6 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Signature.Domain.Services;
 
 namespace backend.Controllers
@@ -10,10 +14,12 @@ namespace backend.Controllers
     public class UsersController : Controller
     {
         private readonly SmgService _smg;
+        private readonly Database _db;
 
-        public UsersController(SmgService smg)
+        public UsersController(SmgService smg, Database db)
         {
             _smg = smg;
+            this._db = db;
         }
 
         [HttpPost("login")]
@@ -22,7 +28,7 @@ namespace backend.Controllers
             return Ok(await _smg.Authenticate(data.UserName, data.Password));
         }
 
-        [HttpGet("")]
+        [HttpGet]
         public async Task<IActionResult> GetList(int session)
         {
             var response = await _smg.GetAllEmployees(session);
@@ -31,6 +37,10 @@ namespace backend.Controllers
                 return Unauthorized();
             }
 
+            foreach (var profile in response.Profiles)
+            {
+                profile.Achievements = await GetAchievements(session, profile.ProfileId);
+            }
 
             return Ok(response.Profiles);
         }
@@ -44,7 +54,30 @@ namespace backend.Controllers
                 return Unauthorized();
             }
 
+            response.Profile.Achievements = await GetAchievements(session, id);
+
             return Ok(response.Profile);
+        }
+
+
+
+        private async Task<List<Achievement>> GetAchievements(int session, int userId)
+        {
+            var list = await _db.AchievementOperations.Where(a => a.ToUserId == userId).Include(a => a.Achievement).ToListAsync();
+
+            var result = new List<Achievement>();
+            foreach (var item in list)
+            {
+                result.Add(new Achievement
+                {
+                    Comment = item.Comment,
+                    Id = item.Id,
+                    FromUser = (await _smg.GetEmployeeDetailsById(session, item.FromUserId)).Profile,
+                    Icon = item.Achievement.Url
+                });
+            }
+
+            return result;
         }
     }
 }
