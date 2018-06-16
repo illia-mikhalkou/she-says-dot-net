@@ -38,4 +38,15 @@ h1.portal-app-name {
   max-height: calc(100vh - 84px);
   overflow-y: auto;
   margin: 10px 0;
+  //min-width: 900px;
+}
+
+.mat-list-item {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .content-wrapper {
+    padding: 5%;
+  }
 }
