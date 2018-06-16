@@ -11,5 +11,8 @@ namespace backend.Controllers
     [Route("api/Mining")]
     public class MiningController : Controller
     {
+
+
+
     }
 }
