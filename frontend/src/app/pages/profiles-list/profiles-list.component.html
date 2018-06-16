@@ -1,5 +1,3 @@
 <div class="list-wrapper">
-  <profile-list-item></profile-list-item>
-  <profile-list-item></profile-list-item>
-  <profile-list-item></profile-list-item>
+  <profile-list-item *ngFor="let profile of data" [profile]="profile"></profile-list-item>
 </div>
