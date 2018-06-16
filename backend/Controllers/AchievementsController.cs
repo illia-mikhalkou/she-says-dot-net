@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class AchievementsController : Controller
     {
         // GET api/values
         [HttpGet]
