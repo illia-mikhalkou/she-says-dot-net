@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Signature.Domain.Services;
 
 namespace backend
 {
@@ -28,6 +29,7 @@ namespace backend
             services.AddDbContext<Database>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<SmgService>();
 
             services.AddMvc();
         }
