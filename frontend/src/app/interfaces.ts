@@ -1,0 +1,3 @@
+interface UserProfile {
+  id: number;
+}

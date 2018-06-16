@@ -18,12 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfilesListComponent } from './pages/profiles-list/profiles-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    ProfilesListComponent
+    ProfilesListComponent,
+    TransactionHistoryComponent
   ],
   imports: [
     BrowserModule,
