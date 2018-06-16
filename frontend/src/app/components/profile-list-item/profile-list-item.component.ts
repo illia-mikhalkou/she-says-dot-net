@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'profile-list-item',
@@ -10,10 +10,22 @@ export class ProfileListItemComponent implements OnInit {
   @Input()
   profile: UserProfile;
 
+  @Output()
+  viewClick: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  giveBadgeClick: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.profile);
   }
 
+  onViewClick(profileId: number) {
+    this.viewClick.emit(profileId);
+  }
+
+  ongiveBadgeClick(profileId: number) {
+    this.viewClick.emit(profileId);
+  }
 }

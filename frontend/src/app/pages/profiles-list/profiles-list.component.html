@@ -1,3 +1,5 @@
-<div class="list-wrapper">
-  <profile-list-item *ngFor="let profile of data" [profile]="profile"></profile-list-item>
+<div>
+  <profile-list-item *ngFor="let profile of data" [profile]="profile"
+    (viewClick)="onItemViewClick($event)">
+  </profile-list-item>
 </div>

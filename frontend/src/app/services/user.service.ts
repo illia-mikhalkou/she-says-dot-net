@@ -51,7 +51,7 @@ export class UserService {
         lastNameEng: 'Bykau',
         middleName: 'Pupkin',
         phone: '111 22 3333',
-        profileId: 1,
+        profileId: 2,
         rank: '.NET Developer',
         room: '402',
         skype: 'vasya_pupkin'
@@ -70,7 +70,7 @@ export class UserService {
         lastNameEng: 'Ivanou',
         middleName: 'Alehandrowich',
         phone: '111 22 3333',
-        profileId: 1,
+        profileId: 3,
         rank: '.NET Developer',
         room: '402',
         skype: 'petya_ivanou'
