@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
     public class AchievementsController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly Database _db;
+
+        public AchievementsController(Database db)
         {
-            return new string[] { "value1", "value2" };
+            _db = db;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("all")]
+        public async Task<IActionResult> Get()
         {
-            return "value";
+            return Ok(await _db.Achievements.ToListAsync());
         }
 
         // POST api/values
