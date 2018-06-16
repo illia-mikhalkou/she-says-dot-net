@@ -2,7 +2,8 @@
     $avatar-size: 70px;
 
     mat-card {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        min-width: 450px;
 
         .mat-card-avatar {
             height: $avatar-size;
@@ -16,6 +17,18 @@
 
             .mat-card-subtitle:last-child {
                 margin-bottom: 0;
+            }
+        }
+
+        .badges-container {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-left: 10px;
+
+            .list-badge:not(:first-child) {
+                margin-left: -8%;
+                word-wrap: none;
             }
         }
     }
