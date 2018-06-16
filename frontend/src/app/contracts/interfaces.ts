@@ -17,3 +17,11 @@ interface UserProfile {
   phone: string;
   skype: string;
 }
+
+interface LoginResponse {
+  sessionId: number;
+  extensionData: any;
+  errorCode: string;
+  permission: string;
+}
+
