@@ -63,7 +63,7 @@ namespace backend.Controllers
 
         private async Task<List<Achievement>> GetAchievements(int session, int userId)
         {
-            var list = await _db.AchievementOperations.Where(a => a.ToUserId == userId).ToListAsync();
+            var list = await _db.AchievementOperations.Where(a => a.ToUserId == userId).Include(a => a.Achievement).ToListAsync();
 
             var result = new List<Achievement>();
             foreach (var item in list)
