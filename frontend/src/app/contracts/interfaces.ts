@@ -19,9 +19,9 @@ interface UserProfile {
 }
 
 interface LoginResponse {
-  sessionId: number;
-  extensionData: any;
-  errorCode: string;
-  permission: string;
+  SessionId: number;
+  ExtensionData: any;
+  ErrorCode: string;
+  Permission: string;
 }
 

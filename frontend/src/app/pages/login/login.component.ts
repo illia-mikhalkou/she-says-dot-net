@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.authService.login(this.username, this.password)
       .subscribe((response: LoginResponse) => {
-        localStorage.setItem('session_id', response.sessionId.toString());
+        localStorage.setItem('session_id', response.SessionId.toString());
         this.router.navigateByUrl('profile/1');
       });
   }

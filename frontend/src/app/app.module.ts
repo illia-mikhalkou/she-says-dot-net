@@ -27,7 +27,10 @@ import { ProfilesListComponent } from './pages/profiles-list/profiles-list.compo
 import { AppRoutingModule } from './app-routing.module';
 import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
 import { ProfileListItemComponent } from './components/profile-list-item/profile-list-item.component';
+
 import { LoginComponent } from './pages/login/login.component';
+import { GiveBadgeModalComponent } from './components/give-badge-modal/give-badge-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { LoginComponent } from './pages/login/login.component';
     ProfilesListComponent,
     TransactionHistoryComponent,
     ProfileListItemComponent,
-    LoginComponent
+    LoginComponent,
+    GiveBadgeModalComponent
   ],
   imports: [
     BrowserModule,
