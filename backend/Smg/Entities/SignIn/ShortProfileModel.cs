@@ -1,4 +1,8 @@
-﻿namespace Signature.Domain.Entities.SignIn
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using backend.ViewModels;
+
+namespace Signature.Domain.Entities.SignIn
 {
     public class ShortProfileModel
     {
@@ -12,5 +16,6 @@
         public string Position { get; set; }
         public int ProfileId { get; set; }
         public string Room { get; set; }
+        public List<AchievementInfo> Achievements { get; set; }
     }
 }
