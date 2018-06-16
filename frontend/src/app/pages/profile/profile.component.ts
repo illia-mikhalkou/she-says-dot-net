@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
 
-import { UserProfile, ProfileAchievement } from './../../interfaces';
+import { UserService } from './../../services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,13 +17,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
   userId: number;
 
   userProfile: UserProfile;
-  achievements: ProfileAchievement[] = [];
+  achievements = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private userService: UserService) {
+
+  }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
       this.userId = +params['id'];
+      this.userService.getProfile(this.userId).subscribe(resp => {
+        this.userProfile = resp;
+      });
     });
   }
 

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProfilesListComponent } from './pages/profiles-list/profiles-list.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
 
 const routes: Routes = [
     {
@@ -10,8 +11,12 @@ const routes: Routes = [
         component: ProfilesListComponent,
     },
     {
-        path: 'profile',
+        path: 'profile/:id',
         component: ProfileComponent
+    },
+    {
+      path: 'transaction-history',
+      component: TransactionHistoryComponent
     }
 ];
 
