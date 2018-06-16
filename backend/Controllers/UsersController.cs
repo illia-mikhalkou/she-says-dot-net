@@ -72,7 +72,7 @@ namespace backend.Controllers
                 {
                     Comment = item.Comment,
                     Id = item.Id,
-                    FromUser = await _smg.GetEmployeeDetailsById(session, item.FromUserId)
+                    FromUser = (await _smg.GetEmployeeDetailsById(session, item.FromUserId)).Profile
                 });
             }
 

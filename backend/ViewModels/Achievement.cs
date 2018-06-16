@@ -11,6 +11,6 @@ namespace backend.ViewModels
         public int Id { get; set; }
         public string Icon { get; set; }
         public string Comment { get; set; }
-        public GetProfileDetailsOutput FromUser { get; set; }
+        public ProfileDetails FromUser { get; set; }
     }
 }
