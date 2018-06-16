@@ -21,17 +21,21 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfilesListComponent } from './pages/profiles-list/profiles-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TransactionHistoryComponent } from './pages/transaction-history/transaction-history.component';
+import { ProfileListItemComponent } from './components/profile-list-item/profile-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     ProfilesListComponent,
-    TransactionHistoryComponent
+    TransactionHistoryComponent,
+    ProfileListItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
+    AppRoutingModule,
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
@@ -43,7 +47,6 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
     MatTableModule,
     MatToolbarModule,
     MatGridListModule,
-    RouterModule,
     AppRoutingModule
   ],
   providers: [],
