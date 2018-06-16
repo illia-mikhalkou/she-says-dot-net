@@ -1,10 +1,26 @@
 :host {
+    $avatar-size: 70px;
+
     mat-card {
         margin-bottom: 10px;
+
+        .mat-card-avatar {
+            height: $avatar-size;
+            width: $avatar-size;
+        }
+
+        .mat-card-header {
+            .mat-card-header-text {
+                padding-left: 10px;
+            }
+
+            .mat-card-subtitle:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
-    .example-header-image {
-        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    .header-image {
         background-size: cover;
     }
 }
