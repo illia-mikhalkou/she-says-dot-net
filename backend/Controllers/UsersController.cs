@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Signature.Domain.Entities.SignIn;
 using Signature.Domain.Services;
 
 namespace backend.Controllers
@@ -22,12 +23,14 @@ namespace backend.Controllers
             this._db = db;
         }
 
+        [ProducesResponseType(200, Type = typeof(AuthenticateOutput))]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]Login data)
         {
             return Ok(await _smg.Authenticate(data.UserName, data.Password));
         }
 
+        [ProducesResponseType(200, Type = typeof(List<ShortProfileModel>))]
         [HttpGet]
         public async Task<IActionResult> GetList(int session)
         {
@@ -45,6 +48,7 @@ namespace backend.Controllers
             return Ok(response.Profiles);
         }
 
+        [ProducesResponseType(200, Type = typeof(ProfileDetails))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProfile(int session, int id)
         {
@@ -61,14 +65,14 @@ namespace backend.Controllers
 
 
 
-        private async Task<List<Achievement>> GetAchievements(int session, int userId)
+        private async Task<List<AchievementInfo>> GetAchievements(int session, int userId)
         {
             var list = await _db.AchievementOperations.Where(a => a.ToUserId == userId).Include(a => a.Achievement).ToListAsync();
 
-            var result = new List<Achievement>();
+            var result = new List<AchievementInfo>();
             foreach (var item in list)
             {
-                result.Add(new Achievement
+                result.Add(new AchievementInfo
                 {
                     Comment = item.Comment,
                     Id = item.Id,

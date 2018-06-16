@@ -6,7 +6,7 @@ using Signature.Domain.Entities.SignIn;
 
 namespace backend.ViewModels
 {
-    public class Achievement
+    public class AchievementInfo
     {
         public int Id { get; set; }
         public string Icon { get; set; }
