@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import {
   MatButtonModule,
+  MatCardModule,
   MatExpansionModule,
   MatIconModule,
   MatListModule,
@@ -11,7 +12,8 @@ import {
   MatSidenavModule,
   MatSortModule,
   MatTableModule,
-  MatToolbarModule } from '@angular/material';
+  MatToolbarModule,
+  MatGridListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +33,7 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatCardModule,
     MatExpansionModule,
     MatIconModule,
     MatListModule,
@@ -39,6 +42,7 @@ import { TransactionHistoryComponent } from './pages/transaction-history/transac
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
+    MatGridListModule,
     RouterModule,
     AppRoutingModule
   ],

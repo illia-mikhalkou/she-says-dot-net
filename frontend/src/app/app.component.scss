@@ -31,3 +31,8 @@ h1.portal-app-name {
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
 }
+
+.content-wrapper {
+  padding: 20px;
+  height: 100%;
+}
