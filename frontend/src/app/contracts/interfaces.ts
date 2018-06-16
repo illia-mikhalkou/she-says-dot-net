@@ -9,7 +9,7 @@ interface UserProfile {
   email: string;
   rank: string;
   deptId: number;
-  group: number;
+  group: string;
   room: string;
   domenName: string;
   employmentDate: Date;

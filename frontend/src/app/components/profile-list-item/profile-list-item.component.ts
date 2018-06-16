@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'profile-list-item',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileListItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  profile: UserProfile;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
