@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import {
   MatButtonModule,
+  MatCardModule,
   MatExpansionModule,
   MatIconModule,
   MatListModule,
@@ -11,8 +12,8 @@ import {
   MatSidenavModule,
   MatSortModule,
   MatTableModule,
-  MatToolbarModule, 
-  MatCardModule} from '@angular/material';
+  MatToolbarModule,
+  MatGridListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +37,7 @@ import { ProfileListItemComponent } from './components/profile-list-item/profile
     RouterModule,
     AppRoutingModule,
     MatButtonModule,
+    MatCardModule,
     MatExpansionModule,
     MatIconModule,
     MatListModule,
@@ -44,7 +46,8 @@ import { ProfileListItemComponent } from './components/profile-list-item/profile
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
-    MatCardModule
+    MatGridListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
